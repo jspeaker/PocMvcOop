@@ -1,0 +1,7 @@
+﻿@model IInventory
+<ul>
+  @foreach (string vehicle in Model.VehicleDescriptions())
+  {
+    <li>@vehicle</li>
+  }
+</ul>
