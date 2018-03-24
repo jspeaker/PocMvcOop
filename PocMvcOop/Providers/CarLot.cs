@@ -14,10 +14,11 @@ namespace PocMvcOop.Providers
         {
             return new Inventory(new List<IVehicle>
             {
-                new Vehicle(1, "Ferrari"),
-                new Vehicle(2, "Lamborgini"),
-                new Vehicle(3, "Pinto"),
-                new Vehicle(4, "Gremlin")
+                new Vehicle(1, "2001 Ferrari 550 Barchetta"),
+                new Vehicle(2, "2012 Lamborghini Gallardo"),
+                new Vehicle(3, "1972 Ford Pinto"),
+                new Vehicle(4, "1976 AMC Gremlin"),
+                new Vehicle(5, "1980 Fiat 124 Sport Spider")
             });
         }
     }

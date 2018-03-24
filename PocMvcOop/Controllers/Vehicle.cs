@@ -14,7 +14,7 @@ namespace PocMvcOop.Controllers
             _carLot = carLot;
         }
 
-        [HttpGet, Route("/carlot/vehicle")]
+        [HttpGet, Route("/api/carlot/vehicle")]
         public IActionResult VehicleList()
         {
             return Json(_carLot.Inventory());
