@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 using System.Linq;
-using Newtonsoft.Json;
 
 namespace PocMvcOop.Models
 {
@@ -11,15 +11,15 @@ namespace PocMvcOop.Models
 
     public class Inventory : IInventory
     {
-        public Inventory(List<IWidget> widgets)
+        public Inventory(List<IVehicle> vehicles)
         {
-            _widgets = widgets;
+            _vehicles = vehicles;
         }
 
-        [JsonProperty] private readonly List<IWidget> _widgets;
+        [JsonProperty] private readonly List<IVehicle> _vehicles;
         public List<string> VehicleDescriptions()
         {
-            return new List<string>(_widgets.Select(w => w.ToString()));
+            return new List<string>(_vehicles.Select(w => w.ToString()));
         }
     }
 }

@@ -1,7 +1,3 @@
-﻿@model IInventory
-<ul>
-  @foreach (string vehicle in Model.VehicleDescriptions())
-  {
-    <li>@vehicle</li>
-  }
-</ul>
+﻿<div>Welcome to Honest Joe's Used Car Lot!</div>
+
+@Html.Partial("_Vehicles")

@@ -12,12 +12,12 @@ namespace PocMvcOop.Providers
     {
         public IInventory Inventory()
         {
-            return new Inventory(new List<IWidget>
+            return new Inventory(new List<IVehicle>
             {
-                new Widget(1, "Ferrari"),
-                new Widget(2, "Lamborgini"),
-                new Widget(3, "Pinto"),
-                new Widget(4, "Gremlin")
+                new Vehicle(1, "Ferrari"),
+                new Vehicle(2, "Lamborgini"),
+                new Vehicle(3, "Pinto"),
+                new Vehicle(4, "Gremlin")
             });
         }
     }

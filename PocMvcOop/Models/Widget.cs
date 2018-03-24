@@ -2,14 +2,14 @@
 
 namespace PocMvcOop.Models
 {
-    public interface IWidget
+    public interface IVehicle
     {
         string ToString();
     }
 
-    public class Widget : IWidget
+    public class Vehicle : IVehicle
     {
-        public Widget(int id, string name)
+        public Vehicle(int id, string name)
         {
             _id = id;
             _name = name;
