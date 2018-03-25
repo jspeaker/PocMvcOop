@@ -1,5 +1,3 @@
-using System;
-
 namespace PocMvcOop.Models
 {
     public class ErrorViewModel
