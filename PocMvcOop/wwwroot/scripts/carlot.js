@@ -8,7 +8,7 @@ CarLot.Vehicle = function (vehicle) {
   var name = vehicle._name;
 
   var primaryKey = function () {
-    return id;
+    return "vehicle-pk-" + id;
   };
 
   var description = function () {
@@ -36,7 +36,7 @@ CarLot.Inventory = function (inventory, scribe) {
     for (var index = 0; index < inventory._vehicles.length; index += 1) {
       var vehicle = vehicles[index];
       scribe.inscribe(targetSelector, "tr", vehicle.primaryKey(), "", "");
-      scribe.inscribe("#vehicle-pk-" + vehicle.primaryKey(), "td", "", "", vehicle.description());
+      scribe.inscribe("#" + vehicle.primaryKey(), "td", "", "", vehicle.description());
     }
   };
 

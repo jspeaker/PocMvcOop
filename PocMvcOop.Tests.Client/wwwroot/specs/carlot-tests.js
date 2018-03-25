@@ -15,11 +15,12 @@ describe("GivenInventory",
 
 describe("GivenVehicle",
   function () {
-    var vehicle = new CarLot.Vehicle({ _id: 1, _name: "Pinto" });
+    var id = 1;
+    var vehicle = new CarLot.Vehicle({ _id: id, _name: "Pinto" });
 
     it("WhenAskingPrimaryKey_ThenItShouldReturnCorrectPrimaryKey",
       function () {
-        expect(vehicle.primaryKey()).toEqual(1);
+        expect(vehicle.primaryKey()).toEqual("vehicle-pk-" + id);
       });
 
     it("WhenAskingDescription_ThenItShouldReturnCorrectDescription",
