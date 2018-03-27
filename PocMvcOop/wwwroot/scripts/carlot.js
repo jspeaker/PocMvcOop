@@ -23,7 +23,7 @@ CarLot.Vehicle = function (vehicle) {
 
 CarLot.Inventory = function (inventory, scribe) {
   // ReSharper disable CallerCalleeUsing
-  if (!(this instanceof arguments.callee)) return new arguments.callee(inventory);
+  if (!(this instanceof arguments.callee)) return new arguments.callee(inventory, scribe);
   // ReSharper restore CallerCalleeUsing
 
   var vehicles = [];
