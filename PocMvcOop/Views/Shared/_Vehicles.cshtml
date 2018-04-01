@@ -9,8 +9,10 @@
 
 <script type="text/javascript">
   window.onload = function () {
-    $.get("/api/carlot/vehicle", function (result) {
-      new CarLot.Inventory(result, new Output.HtmlScribe($)).render("#inventory");
+    CarLot.init($, function () {
+      CarLot.domAccess.get("/api/carlot/vehicle", function (result) {
+        new CarLot.Inventory(result).render("#inventory");
+      });
     });
   };
 </script>

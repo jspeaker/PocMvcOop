@@ -15,7 +15,7 @@ namespace PocMvcOop.Tests.Unit.Models
             // arrange
             IInventory inventory = new Inventory(new List<IVehicle>
             {
-                new Vehicle(1, "1974 AMC Pacer")
+                new Vehicle(1, 1974, "AMC", "Pacer", 4999.99m)
             });
 
             // act
@@ -23,7 +23,7 @@ namespace PocMvcOop.Tests.Unit.Models
 
             // assert
             vehicleDescriptions.Should().HaveCount(1);
-            vehicleDescriptions.Single().Should().Be("1 : 1974 AMC Pacer");
+            vehicleDescriptions.Single().Should().Be("1 : 1974 AMC Pacer, $4,999.99");
         }
     }
 }

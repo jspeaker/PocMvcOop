@@ -8,16 +8,29 @@ namespace PocMvcOop.Tests.Unit.Models
     public class VehicleTests
     {
         [TestMethod, TestCategory("Unit")]
-        public void VehicleShouldFOo()
+        public void VehicleShouldFormatDescriptionCorrectly()
         {
             // arrange
-            IVehicle vehicle = new Vehicle(1, "Le Car");
+            IVehicle vehicle = new Vehicle(1, 1981, "Renault", "Le Car", 1599.99m);
 
             // act
             string description = vehicle.ToString();
 
             // assert
-            description.Should().Be("1 : Le Car");
+            description.Should().Be("1 : 1981 Renault Le Car, $1,599.99");
+        }
+
+        [TestMethod, TestCategory("Unit")]
+        public void SoldVehicleShouldFormatDescriptionCorrectly()
+        {
+            // arrange
+            IVehicle vehicle = new Vehicle(1, 1981, "Renault", "Le Car", 1599.99m, true);
+
+            // act
+            string description = vehicle.ToString();
+
+            // assert
+            description.Should().Be("1 : 1981 Renault Le Car - SOLD!, $1,599.99");
         }
     }
 }

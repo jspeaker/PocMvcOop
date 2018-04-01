@@ -1,8 +1,8 @@
 ﻿var Output = Output || {};
+
 Output.HtmlScribe = function (domAccess) {
-  // ReSharper disable CallerCalleeUsing
+  if (!domAccess) return new arguments.callee($);
   if (!(this instanceof arguments.callee)) return new arguments.callee(domAccess);
-  // ReSharper restore CallerCalleeUsing
 
   var clear = function (target) {
     domAccess(target).html("");
@@ -27,5 +27,20 @@ Output.HtmlScribe = function (domAccess) {
   return {
     clear: clear,
     inscribe: inscribe
+  };
+};
+
+Output.Archivist = function (domAccess) {
+  if (!domAccess) return new arguments.callee($);
+  if (!(this instanceof arguments.callee)) return new arguments.callee(domAccess);
+
+  var cache = function (target, key, value) {
+    if (!target || !key || value === null || value === undefined) return;
+
+    domAccess(target).data(key, value);
+  };
+
+  return {
+    cache: cache
   };
 };
