@@ -1,12 +1,22 @@
 ﻿// ReSharper disable UseOfImplicitGlobalInFunctionScope
 // ReSharper disable PossiblyUnassignedProperty
 
+/// <reference path="../dependencies/jquery-3.3.1.min.js" />
+
+/// <reference path="../../../PocMvcOop/wwwroot/scripts/output.js" />
+/// <reference path="../../../PocMvcOop/wwwroot/scripts/carlot.js" />
+
+/// <reference path="../scripts/fakes/fake-scribe.js" />
+/// <reference path="../scripts/fakes/fake-archivist.js" />
+/// <reference path="../scripts/fakes/intl-polyfill.js" />
+
 describe("GivenInventory",
   function () {
     CarLot.init($);
+    var id = 1;
     var fakeScribe = new Output.FakeScribe();
     var fakeArchivist = new Output.FakeArchivist();
-    var inventory = new CarLot.Inventory({ _vehicles: [{ _id: 1, _name: "Pinto" }] }, fakeScribe, fakeArchivist);
+    var inventory = new CarLot.Inventory({ _vehicles: [{ _id: id, _year: 1972, _make: "Ford", _model: "Pinto", _price: 1234.56, _sold: true }] }, fakeScribe, fakeArchivist);
 
     it("WhenAskingToRender_ThenItShouldInscribe",
       function () {
@@ -68,7 +78,6 @@ describe("GivenRealScribeAndSoldVehicle",
         vehicle.render("body");
         var vehicleRow = $("#vehicle-pk-" + id);
         expect($(vehicleRow.find("td")[0]).html()).toEqual("1972 Ford Pinto - SOLD!");
-        expect($(vehicleRow.find("td")[1]).html()).toEqual("$1,234.56");
       });
   });
 
@@ -87,7 +96,6 @@ describe("GivenRealScribeAndNotSoldVehicle",
         var vehicleRow = $("#vehicle-pk-" + id);
         var html = $(vehicleRow.find("td")[0]).html();
         expect($(vehicleRow.find("td")[0]).html()).toEqual("1972 Ford Pinto");
-        expect($(vehicleRow.find("td")[1]).html()).toEqual("$1,234.56");
       });
   });
 

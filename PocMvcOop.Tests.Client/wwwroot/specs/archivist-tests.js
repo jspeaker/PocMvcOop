@@ -1,6 +1,15 @@
 ﻿// ReSharper disable UseOfImplicitGlobalInFunctionScope
 // ReSharper disable PossiblyUnassignedProperty
 
+/// <reference path="../dependencies/jquery-3.3.1.min.js" />
+
+/// <reference path="../../../PocMvcOop/wwwroot/scripts/output.js" />
+/// <reference path="../../../PocMvcOop/wwwroot/scripts/carlot.js" />
+
+/// <reference path="../scripts/fakes/fake-scribe.js" />
+/// <reference path="../scripts/fakes/fake-archivist.js" />
+/// <reference path="../scripts/fakes/intl-polyfill.js" />
+
 describe("GivenArchivistAndData",
   function () {
     var scribe = new Output.HtmlScribe($);
