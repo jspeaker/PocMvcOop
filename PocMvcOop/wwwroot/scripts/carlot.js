@@ -15,12 +15,14 @@ CarLot.Vehicle = function (vehicle, scribe, archivist, formatter) {
     return "vehicle-pk-" + vehicle._id;
   };
 
-  var render = function (targetSelector) {
+  var description = function () {
     var sold = vehicle._sold ? " - SOLD!" : "";
-    var description = vehicle._year + " " + vehicle._make + " " + vehicle._model + sold;
+    return vehicle._year + " " + vehicle._make + " " + vehicle._model + sold;
+  };
 
+  var render = function (targetSelector) {
     scribe.inscribe(targetSelector, "tr", primaryKey(), "", "");
-    scribe.inscribe("#" + primaryKey(), "td", "", "", description);
+    scribe.inscribe("#" + primaryKey(), "td", "", "", description());
     scribe.inscribe("#" + primaryKey(), "td", "", "", formatter.format(vehicle._price));
     archivist.cache(primaryKey(), "vehicle", this);
   };

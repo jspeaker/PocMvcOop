@@ -10,7 +10,7 @@
 /// <reference path="../scripts/fakes/fake-archivist.js" />
 /// <reference path="../scripts/fakes/intl-polyfill.js" />
 
-describe("GivenArchivistAndData",
+describe("GivenArchivist",
   function () {
     var scribe = new Output.HtmlScribe($);
     var archivist = new Output.Archivist($);

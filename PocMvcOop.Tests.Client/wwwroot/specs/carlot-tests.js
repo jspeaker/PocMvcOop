@@ -94,7 +94,6 @@ describe("GivenRealScribeAndNotSoldVehicle",
       function () {
         vehicle.render("body");
         var vehicleRow = $("#vehicle-pk-" + id);
-        var html = $(vehicleRow.find("td")[0]).html();
         expect($(vehicleRow.find("td")[0]).html()).toEqual("1972 Ford Pinto");
       });
   });

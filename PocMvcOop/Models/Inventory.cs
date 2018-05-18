@@ -17,9 +17,10 @@ namespace PocMvcOop.Models
         }
 
         [JsonProperty] private readonly List<IVehicle> _vehicles;
+
         public List<string> VehicleDescriptions()
         {
-            return new List<string>(_vehicles.Select(w => w.ToString()));
+            return new List<string>(_vehicles.Select(vehicle => vehicle.ToString()));
         }
     }
 }
