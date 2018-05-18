@@ -14,7 +14,7 @@ namespace PocMvcOop.Providers
     {
         private readonly IMemoryCache _memoryCache;
 
-        public CarLot(IMemoryCache memoryCache)asdf
+        public CarLot(IMemoryCache memoryCache)
         {
             _memoryCache = memoryCache;
         }
